@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App Prototype</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
+</head>
+<body>
+
+<div class="container">
+    <h2>Weather App</h2>
+
+    <!-- Temperature Toggle -->
+    <div class="toggle-container">
+        <label>Temperature Unit:</label>
+        <button onclick="toggleTemperature()">Switch to <span id="unit">Celsius</span></button>
+    </div>
+    
+    <p id="convertedTemp">Temperature: 68 °F</p> <!-- Default display -->
+
+    <h3>Customize Display</h3>
+    <label><input type="checkbox" id="humidityCheckbox" onchange="toggleModule('humidity')"> Humidity</label><br>
+    <label><input type="checkbox" id="windCheckbox" onchange="toggleModule('wind')"> Wind Speed</label><br>
+    <label><input type="checkbox" id="uvCheckbox" onchange="toggleModule('uv')"> UV Index</label><br>
+    
+    <!-- Weather Data -->
+    <div id="humidity" class="weather-info">
+        <p>Humidity: 60% <span class="info-icon" onmouseover="showTooltip(event, 'Humidity measures the amount of moisture in the air.')" onmouseout="hideTooltip()">ⓘ</span></p>
+    </div>
+    <div id="wind" class="weather-info">
+        <p>Wind Speed: 12 km/h <span class="info-icon" onmouseover="showTooltip(event, 'Wind speed is measured in km/h and affects weather conditions.')" onmouseout="hideTooltip()">ⓘ</span></p>
+    </div>
+    <div id="uv" class="weather-info">
+        <p>UV Index: 0 <span class="info-icon" onmouseover="showTooltip(event, 'A UV index of 0 means no risk of sunburn.')" onmouseout="hideTooltip()">ⓘ</span></p>
+    </div>
+    <div class="tooltip" id="tooltip"></div>
+</div>
+
+<script src="scripts.js"></script> <!-- Link to external JavaScript -->
+</body>
+</html> 
